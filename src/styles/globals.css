@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #272727;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+:root{
+    --bg-color: #111111;
+    --main-text: #FFFFFF;
+    --secondary-text: #b5b5b5;
+    --body-text: #c9c9c9;
+    --bg-button: #FFFFFF;
+    --category-filter: #333333;
+    --purple: #4c2889;
+    --javascript: #f0db4f;
+    --html: #e34c26;
+    --php: #787cb5;
+    --reactjs: #61dbfb;
+    --css: #2965f1;
+    --link: #3291ff;
+    --second-bg: #333333;
+    --separator: #4d4d4d;
+    --separator-navbar: #242424;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: var(--bg-color);
+}
+
+body main{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    max-width: 820px;
+    padding: 0 2rem;
+}
+
+header nav a {
+    color: var(--main-text);
+}
+
+/* Singolo Articolo */
+
+article {
+    margin-bottom: 3rem;
+}
+
+article h1{
+    color: var(--main-text);
+}
+
+article .article__body{
+    color: var(--secondary-text);
+}
+
+article .article__body p {
+    line-height: 150%;
+}
+
+article .article__info {
+    margin: .75rem 0;
+}
+
+article a {
+    text-decoration: none;
+}
+
+article .post__categories{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+small{
+    color: var(--main-text);
+    font-size: .6rem;
+    font-weight: 500;
+    background-color: var(--category-filter);
+    padding: .4rem .8rem;
+    border-radius: 20px;
+}
+
+.categories__small{
+    font-size: 1rem;
+    padding: .5rem 1rem;
+}
+
+/* ------ Categorie ------- */
+
+.Javascript {
+    background-color: var(--javascript) !important;
+    color: black !important;
+}
+
+.HTML {
+    background-color: var(--html) !important;
+    color: white !important;
+}
+
+.Php {
+    background-color: var(--php) !important;
+    color: white !important;
+}
+
+.React.JS {
+    background-color: var(--reactjs) !important;
+    color: black !important;
+}
+
+.CSS {
+    background-color: var(--css) !important;
+    color: white !important;
+}
+
+
+/* ----- Filtro Categorie ------ */
+
+.filter__categories__homepage{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.filter__categories__homepage a {
+    text-decoration: none;
+}
+
+
+/* ---- Post Page ----- */
+
+.post__container > h1, h2, h3, h4, h5, h6{
+    color: var(--main-text) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.post__container > p{
+    color: var(--body-text) !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 130% !important;
+}
+
+
+
+.post__container  a{
+    text-decoration: none !important;
+    color: var(--link) !important;
+}
+
+.post__container ul, .post__container ol{
+    color: var(--body-text);
+    margin-bottom: .5rem !important;
+    list-style-position: inside;
+}
+
+.post__container ul li, .post__container ol li{
+    color: var(--body-text);
+    margin-bottom: .5rem !important;
+}
+
+/* .post__container blockquote {
+    background-color: var(--category-filter);
+    color: var(--secondary-text);
+    padding: .6rem;
+    border-radius: 6px;
+} */
+
+.post__container pre {
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: var(--second-bg) !important;
+    margin-bottom: 0.5rem;
+}
+
+.post__container hr {
+    margin: 1.5rem 0;
+    background: none;
+    border: 1px solid var(--separator);
+    border-radius: 8px;
+}
+
+.post__container img {
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+/* ------- Media Queries ------- */
+
+@media screen and (min-width: 700px) {
+    body main{
+      padding: auto 0;
+    }
+}
+

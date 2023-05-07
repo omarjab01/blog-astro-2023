@@ -1,0 +1,32 @@
+---
+import { slugify } from "../js/utils";
+
+const url = Astro.props.post.slug
+
+const {title, description, date, tags, draft, author} = Astro.props.post.data
+
+---
+<article>
+    <div class="post__categories">
+        {
+            tags && 
+                tags.map((tag) => 
+                    (
+                        <a href={`/tag/${slugify(tag)}`}><small class={tag}>{tag}</small></a>
+                    )
+                )
+        }
+    </div>
+    <a href={`/blog/${url}`}>
+        <h1>{title}</h1>
+    </a>
+    <div class="article__body">
+        <div class="article__info">
+            <span>{new Date(date).toLocaleDateString('en-GB')}</span>
+            ·
+            <span>{author}</span>
+        </div>
+        <!-- Descrizione Articolo -->
+        <p>{description}</p>
+    </div>
+</article>

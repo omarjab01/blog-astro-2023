@@ -1,0 +1,23 @@
+---
+import '../styles/globals.css'
+import Navbar from "../components/Navbar.astro";
+import PageHeader from "./PageHeader.astro";
+import Footer from '../components/Footer.astro';
+const pageTitle = Astro.props?.title ? Astro.props.title : 'Page Title'
+const description = Astro.props?.description ? Astro.props.description : 'Empty Description'
+---
+
+<html lang="en">
+	<PageHeader 
+        title={pageTitle}
+        description={description}
+    />
+	<body>
+        <main>
+            <Navbar />
+		    <slot />
+            <Footer />
+        </main>
+	</body>
+    <!-- <Footer /> -->
+</html>

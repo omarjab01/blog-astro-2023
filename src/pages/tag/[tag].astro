@@ -1,0 +1,65 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layout/Layout.astro";
+import PostHeader from "../../components/PostHeader.astro";
+import { categories } from "../../js/utils";
+import Posts from "../../components/Posts.astro";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { tag: 'html' },
+      props: { name: 'HTML' },
+    },
+    {
+      params: { tag: 'css' },
+      props: { name: 'CSS' },
+    },
+    {
+      params: { tag: 'javascript' },
+      props: { name: 'Javascript' },
+    },
+    {
+      params: { tag: 'react-js' },
+      props: { name: 'React JS' },
+    },
+    {
+      params: { tag: 'php' },
+      props: { name: 'Php' },
+    },
+  ];
+}
+
+const { tag } = Astro.params;
+const { name } = Astro.props;
+
+
+const posts = await getCollection('blog');
+
+const filteredPosts = posts.filter(post => {
+    if(post.data.tags){
+        var catArray = post.data.tags
+        if(catArray.includes(name))
+            return post
+    }
+});
+
+---
+
+
+<Layout title={name}>
+  <h3>Posts about {name}</h3>
+  <Posts posts={filteredPosts}/>
+</Layout>
+
+
+<style>
+  h3{
+    margin: 1.5rem 0;
+    color: var(--secondary-text) !important;
+  }
+
+  section {
+    margin: 2rem 0;
+  }
+</style>

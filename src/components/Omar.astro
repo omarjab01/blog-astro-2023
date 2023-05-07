@@ -1,0 +1,63 @@
+---
+---
+
+
+<section>
+    <img src="/images/pfp_omar.jpg" alt="Omar Jabraoui" class="pfp" width="auto" height="auto"/>
+    <div>
+        <h1>Omar Jabraoui</h1>
+        <p>Web Developer & Designer from Italy.</p>
+        <a href="https://twitter.com/its_omarjab" target="_blank">
+            <img src="https://cdn.cdnlogo.com/logos/t/48/twitter.png" alt="@its_omarjab" class="twitter" width="24px"/>
+        </a>
+    </div>
+</section>
+
+
+<style>
+    section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2rem;
+        margin: 2rem 0;
+        align-items: center;
+    }
+
+    section .pfp{
+        width: 100%;
+        border-radius: 200%;
+        padding: .3rem;
+    }
+
+    section .twitter {
+        /* width: 24px; */
+        margin-top: .5rem;
+    }
+
+    section h1 {
+        color: var(--main-text);
+        font-size: 1.2rem;
+    }
+
+    section p {
+        color: var(--body-text);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    @media screen and (min-width: 700px) {
+        section{
+            grid-template-columns: 1fr 4fr;
+            gap: 3rem;
+        }
+
+        section h1 {
+            font-size: 1.5rem;
+        }
+
+        section p{
+            font-size: 1rem;
+        }
+    }
+</style>

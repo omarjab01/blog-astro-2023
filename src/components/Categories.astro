@@ -1,0 +1,20 @@
+---
+import type { map } from 'astro/zod';
+import { categories, slugify } from '../js/utils';
+---
+
+<div class="filter__categories__homepage">
+    {
+        Object.entries(categories).map(([key, value]) => (
+            <a href={`/tag/${key}`}>
+                <small class="categories__small">{value}</small>
+            </a>
+        ))
+    }
+</div>
+
+<style>
+    div {
+        margin-bottom: 2rem;
+    }
+</style>

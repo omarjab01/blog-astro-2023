@@ -1,0 +1,39 @@
+---
+import {getCollection} from 'astro:content'
+import Layout from '../layout/Layout.astro';
+import PostCard from '../components/PostCard.astro';
+import Omar from '../components/Omar.astro';
+import Categories from '../components/Categories.astro';
+
+const posts = await getCollection('blog');
+const sortedPosts = [...posts].sort(
+		(a, b) => new Date(b.data.date) - new Date(a.data.date)
+)
+
+
+---
+
+<Layout title="Blog">
+
+	<h3>Categories</h3>
+    <Categories />
+
+	<h3>Recent Posts</h3>
+
+	{
+		sortedPosts.map(post => (
+			<PostCard
+				post={post}
+			/>
+		))
+	}
+</Layout>
+
+
+<style>
+	h3 {
+		margin-top: 1rem;
+		margin-bottom: 2rem !important; 
+		color: var(--secondary-text) !important;
+	}
+</style>
